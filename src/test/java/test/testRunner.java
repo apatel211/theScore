@@ -16,7 +16,7 @@ public class testRunner{
 
     @AfterMethod
     public void tearDown() {
-        //driver.quit();
+        driver.quit();
     }
 
     @Test(description = "Player Profile Test Case ", priority = 1)
