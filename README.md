@@ -1,8 +1,13 @@
-❏ Automated test
+❏ Automated test coverage 
+Happy test case for player Name search 
 
 
 
 ❏ How to run
+
+Open Cmd , run appium 
+
+And
 
 Open Cmd, Navigate to your path 
 
@@ -11,7 +16,6 @@ mvn clean / build
 mvn test -Dsurefire.suiteXmlFiles=testng.xml
 OR
 mvn test -DsuiteXmlFile=testng.xml
-
 
 ❏ Prerequisites
 
@@ -45,3 +49,7 @@ Step 6 Open cmd
 
 Step 7 adb devices 
 See list of device which is created by you
+
+❏ Test Framework Approach
+
+The test strategy for the Appium Page Object framework in Java, coupled with TestNG, is meticulously crafted to ensure thorough coverage and efficient testing of the designated feature. This methodology involves a methodical understanding of the feature, identifying pertinent test scenarios, prioritizing test cases, and implementing page objects using the Page Object Model (POM). Integration with TestNG facilitates organized test execution and reporting, while continuous coverage assessment ensures robust validation across diverse scenarios and user interactions. This structured approach guarantees modular and maintainable test automation, enhancing the overall quality assurance process.

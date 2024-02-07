@@ -1,4 +1,4 @@
-package test;
+package testCases;
 
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.android.options.UiAutomator2Options;
@@ -14,7 +14,7 @@ public class init {
 
     public static AndroidDriver initializeDriver() {
         final UiAutomator2Options options = new UiAutomator2Options();
-        options.setApp(Paths.get(System.getProperty("user.dir"), "src", "test", "testAndroidAPK", "theScore.apk").toString());
+        options.setApp(Paths.get(System.getProperty("user.dir"), "src", "testCases", "testAndroidAPK", "theScore.apk").toString());
         options.setDeviceName("Pixel 7");
         options.setAvd("Pixel_7_API_31");
         options.setCapability("autoGrantPermissions", true);

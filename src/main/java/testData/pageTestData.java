@@ -9,6 +9,9 @@ public class pageTestData {
 
     // Search and verify using
     public String playerName = "Stephen Curry";
-    public String dob = "Birth Date";
+    public String playerInfo = "Birth Date";
+    public String teamName = "Golden State Warriors";
+    public String teamInfo = "PLAYERS";
+
 
 }

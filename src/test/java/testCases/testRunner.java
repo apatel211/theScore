@@ -1,4 +1,4 @@
-package test;
+package testCases;
 
 import io.appium.java_client.android.AndroidDriver;
 import org.testng.annotations.AfterMethod;
@@ -21,8 +21,14 @@ public class testRunner{
 
     @Test(description = "Player Profile Test Case ", priority = 1)
     public void verifyPlayerProfileSuccessfully() {
-        final happyCoverage hc = new happyCoverage(driver);
-        hc.verifyPlayerProfileSuccessfully();
+        final happyTestCasePlayerSearch ps = new happyTestCasePlayerSearch(driver);
+        ps.verifyPlayerProfileSuccessfully();
+    }
+
+    @Test(description = "Team Test Case ", priority = 2)
+    public void verifyPlayerTeamSuccessfully() {
+        final happyTestCaseTeamSearch ts = new happyTestCaseTeamSearch(driver);
+        ts.verifyTeamSuccessfully();
     }
 
 }

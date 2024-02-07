@@ -3,7 +3,7 @@
 <suite name="All Test Suite">
     <test verbose="2" preserve-order="true" name="/Applications/Web automation/theScore">
         <classes>
-            <class name="test.testRunner">
+            <class name="testCases.testRunner">
                 <methods>
                     <include name="verifyPlayerProfileSuccessfully"/>
                 </methods>

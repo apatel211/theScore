@@ -1,15 +1,15 @@
-package test;
+package testCases;
 
 import io.appium.java_client.android.AndroidDriver;
 import org.page.*;
 import org.testng.Assert;
 import testData.pageTestData;
-import utils.basePage;
+import org.page.basePage;
 import utils.logger;
 
-public class happyCoverage extends basePage {
+public class happyTestCasePlayerSearch extends basePage {
 
-    public happyCoverage (AndroidDriver driver) {
+    public happyTestCasePlayerSearch(AndroidDriver driver) {
         super(driver);
     }
 
@@ -29,12 +29,12 @@ public class happyCoverage extends basePage {
 
         // Search player name
         final searchPage sp = new searchPage(driver);
-        Assert.assertTrue(sp.enterSearchText());
+        Assert.assertTrue(sp.enterSearchPlayerName());
 
         // Verify player page information
-        final playerPage pp = new playerPage(driver);
-        Assert.assertEquals(td.playerName,pp.verifyPlayerPage());
-        Assert.assertEquals(td.dob,pp.verifyPlayerPageAnotherTab());
+        final teamPage tp = new teamPage(driver);
+        Assert.assertEquals(td.teamName,tp.verifyTeamPage());
+        Assert.assertEquals(td.teamInfo,tp.verifyTeamPageAnotherTab());
 
         // Navigate back to home screen
         Assert.assertTrue(sp.verifyBackTabToSearchList());
