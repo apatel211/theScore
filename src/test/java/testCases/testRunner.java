@@ -26,7 +26,7 @@ public class testRunner{
     }
 
     @Test(description = "Team Test Case ", priority = 2)
-    public void verifyPlayerTeamSuccessfully() {
+    public void verifyTeamSuccessfully() {
         final happyTestCaseTeamSearch ts = new happyTestCaseTeamSearch(driver);
         ts.verifyTeamSuccessfully();
     }

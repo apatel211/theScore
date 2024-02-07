@@ -6,6 +6,7 @@
             <class name="testCases.testRunner">
                 <methods>
                     <include name="verifyPlayerProfileSuccessfully"/>
+                    <include name="verifyTeamSuccessfully"/>
                 </methods>
             </class>
         </classes>
