@@ -5,11 +5,11 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
 
-public class basePage {
+public class BasePage {
     protected final AndroidDriver driver;
     protected final WebDriverWait wait;
 
-    public basePage(AndroidDriver driver) {
+    public BasePage(AndroidDriver driver) {
         this.driver = driver;
         this.wait = new WebDriverWait(driver, Duration.ofSeconds(30));
     }

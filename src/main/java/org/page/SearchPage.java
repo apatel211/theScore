@@ -3,13 +3,13 @@ package org.page;
 import io.appium.java_client.AppiumBy;
 import io.appium.java_client.android.AndroidDriver;
 import org.openqa.selenium.By;
-import testData.pageTestData;
-import utils.basePage;
+import testData.PageTestData;
+import utils.BasePage;
 import utils.logger;
 
 import static org.openqa.selenium.support.ui.ExpectedConditions.visibilityOfElementLocated;
 
-public class searchPage extends basePage {
+public class SearchPage extends BasePage {
 
     //private final By allowLocation = AppiumBy.xpath("//android.widget.TextView[@resource-id='com.fivemobile.thescore:id/btn_allow']");
     private final By scoresTitle = AppiumBy.xpath("//android.widget.TextView[@resource-id='com.fivemobile.thescore:id/navigation_bar_item_large_label_view']");
@@ -20,10 +20,10 @@ public class searchPage extends basePage {
     private final By backButton =AppiumBy.xpath("//android.widget.ImageButton[@content-desc='Navigate up']");
 
     private final By searchList =AppiumBy.xpath("//android.widget.LinearLayout[@content-desc='All']");
-    public searchPage(final AndroidDriver driver) {
+    public SearchPage(final AndroidDriver driver) {
         super(driver);
     }
-    pageTestData td = new pageTestData();
+    PageTestData td = new PageTestData();
 
     // Verify user is able to search using player name
     public boolean enterSearchPlayerName() {

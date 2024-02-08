@@ -3,38 +3,38 @@ package testCases;
 import io.appium.java_client.android.AndroidDriver;
 import org.page.*;
 import org.testng.Assert;
-import testData.pageTestData;
-import utils.basePage;
+import testData.PageTestData;
+import utils.BasePage;
 import utils.logger;
 
-public class playerSearchTest extends basePage {
+public class PlayerSearchTest extends BasePage {
 
-    public playerSearchTest(AndroidDriver driver) {
+    public PlayerSearchTest(AndroidDriver driver) {
         super(driver);
     }
 
-    pageTestData td = new pageTestData();
+    PageTestData td = new PageTestData();
 
     public void verifyPlayerProfileSuccessfullyE2E() {
 
         logger.startTestCase("Player profile verification test - Successfully started");
 
         //Get Started Page
-        final welcomePage wp = new welcomePage(driver);
+        final WelcomePage wp = new WelcomePage(driver);
         Assert.assertTrue(wp.enterWelcomePage(driver));
 
         //Login using credentials
-        final loginPage lp = new loginPage(driver);
+        final LoginPage lp = new LoginPage(driver);
         Assert.assertTrue(lp.enterEmailID());
         Assert.assertTrue(lp.enterPassword());
         Assert.assertTrue(lp.login());
 
         // Search player name
-        final searchPage sp = new searchPage(driver);
+        final SearchPage sp = new SearchPage(driver);
         Assert.assertTrue(sp.enterSearchPlayerName());
 
         // Verify player page information
-        final playerPage pp = new playerPage(driver);
+        final PlayerPage pp = new PlayerPage(driver);
         Assert.assertEquals(td.playerName,pp.verifyPlayerPage());
         Assert.assertEquals(td.playerInfo,pp.verifyPlayerPageAnotherTab());
 

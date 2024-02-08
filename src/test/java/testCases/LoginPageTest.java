@@ -1,15 +1,18 @@
 package testCases;
 
 import io.appium.java_client.android.AndroidDriver;
-import org.page.loginPage;
-import org.page.welcomePage;
+import org.page.LoginPage;
+import org.page.WelcomePage;
 import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 import utils.logger;
 
-public class loginPageTest{
+import java.io.IOException;
+import java.text.ParseException;
+
+public class LoginPageTest {
 
     private AndroidDriver driver;
 
@@ -28,11 +31,11 @@ public class loginPageTest{
         logger.startTestCase("Login test - Successfully started");
 
         //Get Started Page
-        welcomePage wp = new welcomePage(driver);
+        WelcomePage wp = new WelcomePage(driver);
         Assert.assertTrue(wp.enterWelcomePage(driver));
 
         //Login using credentials
-        loginPage lp = new loginPage(driver);
+        LoginPage lp = new LoginPage(driver);
         Assert.assertTrue(lp.enterEmailID());
         Assert.assertTrue(lp.enterPassword());
         Assert.assertTrue(lp.login());
@@ -40,15 +43,15 @@ public class loginPageTest{
     }
 
     @Test(description = "Unhappy Login Test Case ")
-    public void verifyLoginUnsuccessfully() {
+    public void verifyLoginUnsuccessfully() throws IOException, ParseException, org.json.simple.parser.ParseException {
         logger.startTestCase("Login test failed - Successfully started");
 
         //Get Started Page
-        welcomePage wp = new welcomePage(driver);
+        WelcomePage wp = new WelcomePage(driver);
         Assert.assertTrue(wp.enterWelcomePage(driver));
 
         //Login using credentials
-        loginPage lp = new loginPage(driver);
+        LoginPage lp = new LoginPage(driver);
         Assert.assertTrue(lp.enterEmailID());
         Assert.assertTrue(lp.enterPasswordWrong());
         Assert.assertTrue(lp.login());

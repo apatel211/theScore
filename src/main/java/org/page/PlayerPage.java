@@ -3,18 +3,18 @@ package org.page;
 import io.appium.java_client.AppiumBy;
 import io.appium.java_client.android.AndroidDriver;
 import org.openqa.selenium.By;
-import utils.basePage;
+import utils.BasePage;
 import utils.logger;
 
 import static org.openqa.selenium.support.ui.ExpectedConditions.visibilityOfElementLocated;
 
-public class playerPage extends basePage {
+public class PlayerPage extends BasePage {
     private final By newsTab= AppiumBy.xpath("//android.widget.LinearLayout[@content-desc='News']");
     private final By infoTab = AppiumBy.xpath("//android.widget.LinearLayout[@content-desc='Info']");
     private final By playerNameText = AppiumBy.xpath("//android.widget.TextView[@resource-id='com.fivemobile.thescore:id/txt_player_name']");
     private final By infoTabText = AppiumBy.xpath("//android.widget.TextView[@resource-id='com.fivemobile.thescore:id/title' and @text='Birth Date']");
 
-    public playerPage(final AndroidDriver driver) {
+    public PlayerPage(final AndroidDriver driver) {
         super(driver);
     }
 

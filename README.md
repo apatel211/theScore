@@ -1,13 +1,13 @@
 ❏ Automated test coverage 
 
-These test case have integration , functional , end to end happy path coverage . Added different ways to cover functional as per page and end to end coverage. 
+These test cases have integration , functional , end to end happy path coverage . Added different ways to cover functional as per page and end to end coverage. 
 About test coverage : End to end happy test coverage is 100% as per challenge , functional coverage we can measure individually but its cover under e2e test. 
 
-Happy test case for player Name search - Make sure search name is coming and verifing page data ( We can cover more in terms of each tab data and all data is coming correctly )
+Happy test case for player Name search - Make sure search name is coming and verifying page data ( We can cover more in terms of each tab data and all data is coming correctly )
 
-Happy test case for team search -  Make sure search name is coming and verifing page data ( We can cover more in terms of each tab data and all data is coming correctly)
+Happy test case for team search -  Make sure search name is coming and verifying page data ( We can cover more in terms of each tab data and all data is coming correctly)
 
-Added login test - To elobrate more on how we can use POM to cover happy / unhappy test case and add more automation test coverage
+Added login test - To elaborate more on how we can use POM to cover happy / unhappy test case and add more automation test coverage
 
 ❏ How to run
 

@@ -3,38 +3,38 @@ package testCases;
 import io.appium.java_client.android.AndroidDriver;
 import org.page.*;
 import org.testng.Assert;
-import testData.pageTestData;
-import utils.basePage;
+import testData.PageTestData;
+import utils.BasePage;
 import utils.logger;
 
-public class teamSearchTest extends basePage {
+public class TeamSearchTest extends BasePage {
 
-    public teamSearchTest(AndroidDriver driver) {
+    public TeamSearchTest(AndroidDriver driver) {
         super(driver);
     }
 
-    pageTestData td = new pageTestData();
+    PageTestData td = new PageTestData();
 
     public void verifyTeamSuccessfullyE2E() {
 
         logger.startTestCase("Team verification test - Successfully started");
 
         //Get Started Page
-        final welcomePage wp = new welcomePage(driver);
+        final WelcomePage wp = new WelcomePage(driver);
         Assert.assertTrue(wp.enterWelcomePage(driver));
 
         //Login using credentials
-        final loginPage lp = new loginPage(driver);
+        final LoginPage lp = new LoginPage(driver);
         Assert.assertTrue(lp.enterEmailID());
         Assert.assertTrue(lp.enterPassword());
         Assert.assertTrue(lp.login());
 
         // Search player name
-        final searchPage sp = new searchPage(driver);
+        final SearchPage sp = new SearchPage(driver);
         Assert.assertTrue(sp.enterSearchTeamName());
 
         // Verify team page information
-        final teamPage tp = new teamPage(driver);
+        final TeamPage tp = new TeamPage(driver);
         Assert.assertEquals(td.teamName,tp.verifyTeamPage());
         Assert.assertEquals(td.teamInfo,tp.verifyTeamPageAnotherTab());
 

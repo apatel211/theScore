@@ -5,17 +5,17 @@ import io.appium.java_client.AppiumBy;
 import io.appium.java_client.android.AndroidDriver;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
-import utils.basePage;
+import utils.BasePage;
 import utils.helper;
 import utils.logger;
 
 import static org.openqa.selenium.support.ui.ExpectedConditions.visibilityOfElementLocated;
 
-public class welcomePage extends basePage {
+public class WelcomePage extends BasePage {
     private final By welcomeText = AppiumBy.xpath("//android.widget.TextView[@resource-id='com.fivemobile.thescore:id/txt_welcome']");
     private final By clickLoginUrl = AppiumBy.xpath("//android.widget.TextView[@resource-id='com.fivemobile.thescore:id/txt_sign_in']");
 
-    public welcomePage(final AndroidDriver driver) {
+    public WelcomePage(final AndroidDriver driver) {
         super(driver);
     }
 
