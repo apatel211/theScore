@@ -1,6 +1,7 @@
 package testCases;
 
 import io.appium.java_client.android.AndroidDriver;
+import org.json.simple.parser.ParseException;
 import org.page.LoginPage;
 import org.page.WelcomePage;
 import org.testng.Assert;
@@ -10,11 +11,10 @@ import org.testng.annotations.Test;
 import utils.logger;
 
 import java.io.IOException;
-import java.text.ParseException;
 
 public class LoginPageTest {
 
-    private AndroidDriver driver;
+    private static AndroidDriver driver;
 
     @BeforeMethod
     public void setupClass() {
@@ -43,7 +43,7 @@ public class LoginPageTest {
     }
 
     @Test(description = "Unhappy Login Test Case ")
-    public void verifyLoginUnsuccessfully() throws IOException, ParseException, org.json.simple.parser.ParseException {
+    public void verifyLoginUnsuccessfully() throws IOException, ParseException {
         logger.startTestCase("Login test failed - Successfully started");
 
         //Get Started Page

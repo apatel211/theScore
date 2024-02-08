@@ -3,6 +3,7 @@ package org.page;
 
 import io.appium.java_client.AppiumBy;
 import io.appium.java_client.android.AndroidDriver;
+import org.json.simple.parser.ParseException;
 import org.openqa.selenium.By;
 import testData.PageTestData;
 import utils.BasePage;
@@ -10,7 +11,7 @@ import utils.JsonParser;
 import utils.logger;
 
 import java.io.IOException;
-import java.text.ParseException;
+
 
 import static org.openqa.selenium.support.ui.ExpectedConditions.visibilityOfElementLocated;
 
@@ -39,7 +40,7 @@ public class LoginPage extends BasePage {
         return passwordElement;
     }
 
-    public boolean enterPasswordWrong() throws IOException, ParseException, org.json.simple.parser.ParseException {
+    public boolean enterPasswordWrong() throws IOException, ParseException {
         final boolean passwordElement = wait.until(visibilityOfElementLocated(this.enterPassword)).isDisplayed();
         wait.until(visibilityOfElementLocated(this.enterPassword)).sendKeys(JsonParser.getTestData("password"));
         logger.info("Password entered successfully");

@@ -20,11 +20,11 @@ public class PlayerSearchTest extends BasePage {
         logger.startTestCase("Player profile verification test - Successfully started");
 
         //Get Started Page
-        final WelcomePage wp = new WelcomePage(driver);
+        WelcomePage wp = new WelcomePage(driver);
         Assert.assertTrue(wp.enterWelcomePage(driver));
 
         //Login using credentials
-        final LoginPage lp = new LoginPage(driver);
+        LoginPage lp = new LoginPage(driver);
         Assert.assertTrue(lp.enterEmailID());
         Assert.assertTrue(lp.enterPassword());
         Assert.assertTrue(lp.login());
