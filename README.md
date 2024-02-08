@@ -17,6 +17,11 @@ mvn test -Dsurefire.suiteXmlFiles=testng.xml
 OR
 mvn test -DsuiteXmlFile=testng.xml
 
+To execute single Test case 
+ mvn test -Dtest=testCases.testRunner#verifyPlayerProfileSuccessfully
+OR
+mvn test -Dtest=testCases.testRunner#verifyTeamSuccessfully
+
 ❏ Prerequisites
 
 appium 2.4.1
