@@ -2,7 +2,9 @@
 
 These test case have integration , functional , end to end happy path coverage . Added 2 test cases to show case the usage of POM .
 
+
 Happy test case for player Name search - Make sure search name is coming and verifing page data ( We can cover more in terms of each tab data and all data is coming correctly in term of full coverage )
+
 
 Happy test case for team search -  Make sure search name is coming and verifing page data ( We can cover more in terms of each tab data and all data is coming correctly in term of full coverage )
 
@@ -21,6 +23,7 @@ OR
 mvn test -DsuiteXmlFile=testng.xml
 
 To execute single Test case 
+
  mvn test -Dtest=testCases.testRunner#verifyPlayerProfileSuccessfully
 OR
 mvn test -Dtest=testCases.testRunner#verifyTeamSuccessfully
