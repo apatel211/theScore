@@ -7,6 +7,8 @@ Happy test case for player Name search - Make sure search name is coming and ver
 
 Happy test case for team search -  Make sure search name is coming and verifing page data ( We can cover more in terms of each tab data and all data is coming correctly)
 
+Added login test - To elobrate more on how we can use POM to cover happy / unhappy test case and add more automation test coverage
+
 ❏ How to run
 
 Open Cmd , run appium 
