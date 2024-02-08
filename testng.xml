@@ -7,6 +7,8 @@
                 <methods>
                     <include name="verifyPlayerProfileSuccessfully"/>
                     <include name="verifyTeamSuccessfully"/>
+                    <include name="verifyLoginSuccessfully"/>
+                    <include name="verifyLoginUnsuccessfully"/>
                 </methods>
             </class>
         </classes>

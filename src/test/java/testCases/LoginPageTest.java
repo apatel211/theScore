@@ -8,13 +8,14 @@ import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
+
 import utils.logger;
 
 import java.io.IOException;
 
 public class LoginPageTest {
 
-    private static AndroidDriver driver;
+    private AndroidDriver driver;
 
     @BeforeMethod
     public void setupClass() {
@@ -27,7 +28,7 @@ public class LoginPageTest {
     }
 
     @Test(description = "Happy Login Test Case")
-    public void verifyLoginSuccessfully() {
+    public void verifyLoginSuccessfully() throws IOException, ParseException {
         logger.startTestCase("Login test - Successfully started");
 
         //Get Started Page
@@ -53,7 +54,7 @@ public class LoginPageTest {
         //Login using credentials
         LoginPage lp = new LoginPage(driver);
         Assert.assertTrue(lp.enterEmailID());
-        Assert.assertTrue(lp.enterPasswordWrong());
+        Assert.assertTrue(lp.enterIncorrectPassword());
         Assert.assertTrue(lp.login());
         logger.info("Login test failed - Successfully completed");
     }

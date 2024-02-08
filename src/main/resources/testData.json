@@ -1,3 +1,4 @@
-{
-"password":"Test@1234"
+{"email": "ankita.it.2012@gmail.com",
+  "correctPassword":"Test@12345",
+"incorrectPassword":"Test@1234"
 }

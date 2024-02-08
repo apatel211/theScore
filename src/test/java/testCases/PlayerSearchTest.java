@@ -1,13 +1,16 @@
 package testCases;
 
 import io.appium.java_client.android.AndroidDriver;
+import org.json.simple.parser.ParseException;
 import org.page.*;
 import org.testng.Assert;
 import testData.PageTestData;
 import utils.BasePage;
 import utils.logger;
 
-public class PlayerSearchTest extends BasePage {
+import java.io.IOException;
+
+public class PlayerSearchTest extends BasePage{
 
     public PlayerSearchTest(AndroidDriver driver) {
         super(driver);
@@ -15,11 +18,11 @@ public class PlayerSearchTest extends BasePage {
 
     PageTestData td = new PageTestData();
 
-    public void verifyPlayerProfileSuccessfullyE2E() {
+    public void verifyPlayerProfileSuccessfullyE2E() throws IOException, ParseException {
 
         logger.startTestCase("Player profile verification test - Successfully started");
 
-        //Get Started Page
+        //get strated page
         WelcomePage wp = new WelcomePage(driver);
         Assert.assertTrue(wp.enterWelcomePage(driver));
 

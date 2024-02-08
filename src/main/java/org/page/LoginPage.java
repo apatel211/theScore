@@ -5,7 +5,6 @@ import io.appium.java_client.AppiumBy;
 import io.appium.java_client.android.AndroidDriver;
 import org.json.simple.parser.ParseException;
 import org.openqa.selenium.By;
-import testData.PageTestData;
 import utils.BasePage;
 import utils.JsonParser;
 import utils.logger;
@@ -23,26 +22,25 @@ public class LoginPage extends BasePage {
     public LoginPage(final AndroidDriver driver) {
         super(driver);
     }
-    PageTestData td = new PageTestData();
 
     // Verify user is able to Login successfully using correct email and password
-    public boolean enterEmailID() {
+    public boolean enterEmailID() throws IOException, ParseException {
         final boolean emailIDElement = wait.until(visibilityOfElementLocated(this.enterEmail)).isDisplayed();
-        wait.until(visibilityOfElementLocated(this.enterEmail)).sendKeys(td.email);
+        wait.until(visibilityOfElementLocated(this.enterEmail)).sendKeys(JsonParser.getTestData("email"));
         logger.info("Email ID entered successfully");
         return emailIDElement;
     }
 
-    public boolean enterPassword() {
+    public boolean enterPassword() throws IOException, ParseException {
         final boolean passwordElement = wait.until(visibilityOfElementLocated(this.enterPassword)).isDisplayed();
-        wait.until(visibilityOfElementLocated(this.enterPassword)).sendKeys(td.password);
+        wait.until(visibilityOfElementLocated(this.enterPassword)).sendKeys(JsonParser.getTestData("correctPassword"));
         logger.info("Password entered successfully");
         return passwordElement;
     }
 
-    public boolean enterPasswordWrong() throws IOException, ParseException {
+    public boolean enterIncorrectPassword() throws IOException, ParseException {
         final boolean passwordElement = wait.until(visibilityOfElementLocated(this.enterPassword)).isDisplayed();
-        wait.until(visibilityOfElementLocated(this.enterPassword)).sendKeys(JsonParser.getTestData("password"));
+        wait.until(visibilityOfElementLocated(this.enterPassword)).sendKeys(JsonParser.getTestData("incorrectPassword"));
         logger.info("Password entered successfully");
         return passwordElement;
     }
