@@ -32,9 +32,9 @@ public class happyTestCasePlayerSearch extends basePage {
         Assert.assertTrue(sp.enterSearchPlayerName());
 
         // Verify player page information
-        final teamPage tp = new teamPage(driver);
-        Assert.assertEquals(td.teamName,tp.verifyTeamPage());
-        Assert.assertEquals(td.teamInfo,tp.verifyTeamPageAnotherTab());
+        final playerPage pp = new playerPage(driver);
+        Assert.assertEquals(td.playerName,pp.verifyPlayerPage());
+        Assert.assertEquals(td.playerInfo,pp.verifyPlayerPageAnotherTab());
 
         // Navigate back to home screen
         Assert.assertTrue(sp.verifyBackTabToSearchList());

@@ -4,6 +4,7 @@ import io.appium.java_client.android.AndroidDriver;
 import org.page.*;
 import org.testng.Assert;
 import testData.pageTestData;
+import org.page.basePage;
 import utils.logger;
 
 public class happyTestCaseTeamSearch extends basePage {
@@ -30,10 +31,10 @@ public class happyTestCaseTeamSearch extends basePage {
         final searchPage sp = new searchPage(driver);
         Assert.assertTrue(sp.enterSearchTeamName());
 
-        // Verify player page information
-        final playerPage pp = new playerPage(driver);
-        Assert.assertEquals(td.playerName,pp.verifyPlayerPage());
-        Assert.assertEquals(td.playerInfo,pp.verifyPlayerPageAnotherTab());
+        // Verify team page information
+        final teamPage tp = new teamPage(driver);
+        Assert.assertEquals(td.teamName,tp.verifyTeamPage());
+        Assert.assertEquals(td.teamInfo,tp.verifyTeamPageAnotherTab());
 
         // Navigate back to home screen
         Assert.assertTrue(sp.verifyBackTabToSearchList());
