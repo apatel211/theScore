@@ -4,6 +4,7 @@ import io.appium.java_client.AppiumBy;
 import io.appium.java_client.android.AndroidDriver;
 import org.openqa.selenium.By;
 import testData.pageTestData;
+import utils.basePage;
 import utils.logger;
 
 import static org.openqa.selenium.support.ui.ExpectedConditions.visibilityOfElementLocated;
@@ -54,16 +55,6 @@ public class searchPage extends basePage {
     public boolean enterSearchTeamName() {
         final boolean scoresTitleElement = wait.until(visibilityOfElementLocated(this.scoresTitle)).isDisplayed();
         logger.info("scores title is displayed");
-
-//        wait.until(visibilityOfElementLocated(this.allowLocation)).click();
-//        logger.info("Click on allow location successfully");
-//        if (wait.until(ExpectedConditions.alertIsPresent())!= null ) {
-//            Alert alert = driver.switchTo().alert();
-//            alert.accept();
-//            System.out.println("Alert is not present");
-//        } else{
-//            System.out.println("Alert is not present");
-//        }
 
         wait.until(visibilityOfElementLocated(this.clickOnSearchBar)).click();
         wait.until(visibilityOfElementLocated(this.enterOnSearchBar)).sendKeys(td.teamName);

@@ -21,14 +21,14 @@ public class testRunner{
 
     @Test(description = "Player Profile Test Case ", priority = 1)
     public void verifyPlayerProfileSuccessfully() {
-        final happyTestCasePlayerSearch ps = new happyTestCasePlayerSearch(driver);
-        ps.verifyPlayerProfileSuccessfully();
+        final playerSearchTest ps = new playerSearchTest(driver);
+        ps.verifyPlayerProfileSuccessfullyE2E();
     }
 
     @Test(description = "Team Test Case ", priority = 2)
     public void verifyTeamSuccessfully() {
-        final happyTestCaseTeamSearch ts = new happyTestCaseTeamSearch(driver);
-        ts.verifyTeamSuccessfully();
+        final teamSearchTest ts = new teamSearchTest(driver);
+        ts.verifyTeamSuccessfullyE2E();
     }
 
 }

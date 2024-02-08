@@ -5,6 +5,7 @@ import io.appium.java_client.AppiumBy;
 import io.appium.java_client.android.AndroidDriver;
 import org.openqa.selenium.By;
 import testData.pageTestData;
+import utils.basePage;
 import utils.logger;
 
 import static org.openqa.selenium.support.ui.ExpectedConditions.visibilityOfElementLocated;
@@ -20,15 +21,18 @@ public class loginPage extends basePage {
     pageTestData td = new pageTestData();
 
     // Verify user is able to Login successfully using correct email and password
-    public boolean enterLoginPage() {
+    public boolean enterEmailID() {
         final boolean clickLoginButtonElement = wait.until(visibilityOfElementLocated(this.clickLoginButton)).isDisplayed();
         wait.until(visibilityOfElementLocated(this.enterEmail)).sendKeys(td.email);
         logger.info("Email ID entered successfully");
+        return clickLoginButtonElement;
+    }
+
+    public void enterPassword() {
         wait.until(visibilityOfElementLocated(this.enterPassword)).sendKeys(td.password);
         logger.info("Password entered successfully");
         wait.until(visibilityOfElementLocated(this.clickLoginButton)).click();
         logger.info("Clicked on login button successfully");
-        return clickLoginButtonElement;
     }
 
 }

@@ -4,20 +4,20 @@ import io.appium.java_client.android.AndroidDriver;
 import org.page.*;
 import org.testng.Assert;
 import testData.pageTestData;
-import org.page.basePage;
+import utils.basePage;
 import utils.logger;
 
-public class happyTestCaseTeamSearch extends basePage {
+public class playerSearchTest extends basePage {
 
-    public happyTestCaseTeamSearch(AndroidDriver driver) {
+    public playerSearchTest(AndroidDriver driver) {
         super(driver);
     }
 
     pageTestData td = new pageTestData();
 
-    public void verifyTeamSuccessfully() {
+    public void verifyPlayerProfileSuccessfullyE2E() {
 
-        logger.startTestCase("Team verification test - Successfully started");
+        logger.startTestCase("Player profile verification test - Successfully started");
 
         //Get Started Page
         final welcomePage wp = new welcomePage(driver);
@@ -25,26 +25,24 @@ public class happyTestCaseTeamSearch extends basePage {
 
         //Login using credentials
         final loginPage lp = new loginPage(driver);
-        Assert.assertTrue(lp.enterLoginPage());
+        Assert.assertTrue(lp.enterEmailID());
+        lp.enterPassword();
 
         // Search player name
         final searchPage sp = new searchPage(driver);
-        Assert.assertTrue(sp.enterSearchTeamName());
+        Assert.assertTrue(sp.enterSearchPlayerName());
 
-        // Verify team page information
-        final teamPage tp = new teamPage(driver);
-        Assert.assertEquals(td.teamName,tp.verifyTeamPage());
-        Assert.assertEquals(td.teamInfo,tp.verifyTeamPageAnotherTab());
+        // Verify player page information
+        final playerPage pp = new playerPage(driver);
+        Assert.assertEquals(td.playerName,pp.verifyPlayerPage());
+        Assert.assertEquals(td.playerInfo,pp.verifyPlayerPageAnotherTab());
 
         // Navigate back to home screen
         Assert.assertTrue(sp.verifyBackTabToSearchList());
         Assert.assertTrue(sp.verifyBackTabToHomePage());
 
-        logger.info("Team test - Successfully completed");
+        logger.info("Player profile verification test - Successfully completed");
     }
 
 }
-
-
-
 
