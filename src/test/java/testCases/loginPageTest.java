@@ -23,20 +23,36 @@ public class loginPageTest{
         driver.quit();
     }
 
-    @Test(description = "login Test Case ")
+    @Test(description = "Happy Login Test Case")
     public void verifyLoginSuccessfully() {
         logger.startTestCase("Login test - Successfully started");
 
         //Get Started Page
-        final welcomePage wp = new welcomePage(driver);
+        welcomePage wp = new welcomePage(driver);
         Assert.assertTrue(wp.enterWelcomePage(driver));
 
         //Login using credentials
-        final loginPage lp = new loginPage(driver);
+        loginPage lp = new loginPage(driver);
         Assert.assertTrue(lp.enterEmailID());
-        lp.enterPassword();
-
+        Assert.assertTrue(lp.enterPassword());
+        Assert.assertTrue(lp.login());
         logger.info("Login test - Successfully completed");
+    }
+
+    @Test(description = "Unhappy Login Test Case ")
+    public void verifyLoginUnsuccessfully() {
+        logger.startTestCase("Login test failed - Successfully started");
+
+        //Get Started Page
+        welcomePage wp = new welcomePage(driver);
+        Assert.assertTrue(wp.enterWelcomePage(driver));
+
+        //Login using credentials
+        loginPage lp = new loginPage(driver);
+        Assert.assertTrue(lp.enterEmailID());
+        Assert.assertTrue(lp.enterPasswordWrong());
+        Assert.assertTrue(lp.login());
+        logger.info("Login test failed - Successfully completed");
     }
 
 }

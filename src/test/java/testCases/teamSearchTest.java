@@ -26,7 +26,8 @@ public class teamSearchTest extends basePage {
         //Login using credentials
         final loginPage lp = new loginPage(driver);
         Assert.assertTrue(lp.enterEmailID());
-        lp.enterPassword();
+        Assert.assertTrue(lp.enterPassword());
+        Assert.assertTrue(lp.login());
 
         // Search player name
         final searchPage sp = new searchPage(driver);

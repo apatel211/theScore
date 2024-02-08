@@ -22,17 +22,31 @@ public class loginPage extends basePage {
 
     // Verify user is able to Login successfully using correct email and password
     public boolean enterEmailID() {
-        final boolean clickLoginButtonElement = wait.until(visibilityOfElementLocated(this.clickLoginButton)).isDisplayed();
+        final boolean emailIDElement = wait.until(visibilityOfElementLocated(this.enterEmail)).isDisplayed();
         wait.until(visibilityOfElementLocated(this.enterEmail)).sendKeys(td.email);
         logger.info("Email ID entered successfully");
-        return clickLoginButtonElement;
+        return emailIDElement;
     }
 
-    public void enterPassword() {
+    public boolean enterPassword() {
+        final boolean passwordElement = wait.until(visibilityOfElementLocated(this.enterPassword)).isDisplayed();
         wait.until(visibilityOfElementLocated(this.enterPassword)).sendKeys(td.password);
         logger.info("Password entered successfully");
+        return passwordElement;
+    }
+
+    public boolean enterPasswordWrong() {
+        final boolean passwordElement = wait.until(visibilityOfElementLocated(this.enterPassword)).isDisplayed();
+        wait.until(visibilityOfElementLocated(this.enterPassword)).sendKeys(td.passwordWrong);
+        logger.info("Password entered successfully");
+        return passwordElement;
+    }
+
+    public boolean login() {
+        final boolean clickLoginButtonElement = wait.until(visibilityOfElementLocated(this.clickLoginButton)).isDisplayed();
         wait.until(visibilityOfElementLocated(this.clickLoginButton)).click();
         logger.info("Clicked on login button successfully");
+        return clickLoginButtonElement;
     }
 
 }
