@@ -2,7 +2,7 @@
 
 These test cases have integration , functional , end to end happy path coverage . Added different ways to cover functional as per page and end to end coverage. 
 About test coverage : End to end happy test coverage is 100% as per challenge , functional coverage we can measure individually but its cover under e2e test. 
-I have used 2 ways to define test data one is static and another is json to make it more data driver and easy to modify data.
+I have used 2 ways to define test data one is static but separate and another is json to make it more data driver and easy to modify data. Along with that added basic HTML report.
 
 Happy test case for player Name search - Make sure search name is coming and verifying page data ( We can cover more in terms of each tab data and all data is coming correctly )
 
@@ -26,7 +26,7 @@ mvn test -DsuiteXmlFile=testng.xml
 
 To execute single Test case 
 
- mvn test -Dtest=testCases.testRunner#verifyPlayerProfileSuccessfully
+mvn test -Dtest=testCases.testRunner#verifyPlayerProfileSuccessfully
 OR
 mvn test -Dtest=testCases.testRunner#verifyTeamSuccessfully
 

@@ -27,16 +27,19 @@ public class LoginPageTest {
         driver.quit();
     }
 
+    WelcomePage wp ;
+    LoginPage lp ;
+
     @Test(description = "Happy Login Test Case")
     public void verifyLoginSuccessfully() throws IOException, ParseException {
         logger.startTestCase("Login test - Successfully started");
 
         //Get Started Page
-        WelcomePage wp = new WelcomePage(driver);
+         wp = new WelcomePage(driver);
         Assert.assertTrue(wp.enterWelcomePage(driver));
 
         //Login using credentials
-        LoginPage lp = new LoginPage(driver);
+        lp = new LoginPage(driver);
         Assert.assertTrue(lp.enterEmailID());
         Assert.assertTrue(lp.enterPassword());
         Assert.assertTrue(lp.login());
@@ -48,11 +51,11 @@ public class LoginPageTest {
         logger.startTestCase("Login test failed - Successfully started");
 
         //Get Started Page
-        WelcomePage wp = new WelcomePage(driver);
+        wp = new WelcomePage(driver);
         Assert.assertTrue(wp.enterWelcomePage(driver));
 
         //Login using credentials
-        LoginPage lp = new LoginPage(driver);
+        lp = new LoginPage(driver);
         Assert.assertTrue(lp.enterEmailID());
         Assert.assertTrue(lp.enterIncorrectPassword());
         Assert.assertTrue(lp.login());
