@@ -30,6 +30,8 @@ mvn test -Dtest=testCases.testRunner#verifyPlayerProfileSuccessfully
 OR
 mvn test -Dtest=testCases.testRunner#verifyTeamSuccessfully
 
+If you want to run it from IDE , Open test -> test cases ->test runner class 
+
 ❏ Prerequisites
 
 appium 2.4.1
